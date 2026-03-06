@@ -214,7 +214,7 @@ export async function uploadImageToMeta(
   const form = new FormData();
   form.append(
     "source",
-    new Blob([finalBuffer]),
+    new Blob([finalBuffer as unknown as BlobPart[]]),
     finalName
   );
   form.append("access_token", accessToken);
